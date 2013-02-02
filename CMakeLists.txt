@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(benchmark-count-digits)
+project(benchmark-itoa)
 
 set(CXX_WARNING_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS "-fvisibility=hidden -fno-rtti -pipe -std=gnu++11 ${CXX_WARNING_FLAGS}")
