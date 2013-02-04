@@ -9,6 +9,7 @@ benchmarks=(
   2pass_2b_2
   2pass_2b_3
   copy_2b
+  2pass_2b_3_prefetch
 )
 
 function mkgraph {
