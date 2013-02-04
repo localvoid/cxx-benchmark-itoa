@@ -12,19 +12,19 @@ benchmarks=(
 )
 
 function mkgraph {
-  ./graph.R < $1 $2
+  ./graph.R < "$1.csv" "$1"
 }
 
 function cold_bench {
   echo "Generating cold data"
   echo "Name,Digits,Time" > $1
   for x in {1..100}; do
-    for i in ${benchmarks[@]}; do
-      DIGITS=20
-      while [ $DIGITS -gt 0 ]; do
+    DIGITS=20
+    while [ $DIGITS -gt 0 ]; do
+      for i in ${benchmarks[@]}; do
         $BPATH$i 1 $DIGITS >> $1
-        let DIGITS-=1
       done
+      let DIGITS-=1
     done
   done
 }
@@ -43,5 +43,5 @@ function hot_bench {
 hot_bench "hot.csv"
 cold_bench "cold.csv"
 
-mkgraph "hot.csv" "hot.pdf"
-mkgraph "cold.csv" "cold.pdf"
+mkgraph "hot"
+mkgraph "cold"
