@@ -18,7 +18,7 @@ function mkgraph {
 function cold_bench {
   echo "Generating cold data"
   echo "Name,Digits,Time" > $1
-  for x in {1..100}; do
+  for x in {1..10}; do
     DIGITS=20
     while [ $DIGITS -gt 0 ]; do
       for i in ${benchmarks[@]}; do
