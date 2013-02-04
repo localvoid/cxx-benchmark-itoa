@@ -65,7 +65,7 @@ arguments (inner loop counter=1, digits=<all
 values for current integer size>).
 
 In the hot mode, it runs benchmark application for 100 times with
-arguments (inner loop counter=100, integer size=<all>).
+arguments (inner loop counter=100).
 
 And then generates graphical representation of the collected data. As
 a time value it uses median of all time values for each (benchmark,
