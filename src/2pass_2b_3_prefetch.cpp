@@ -21,7 +21,6 @@ const char digit_pairs[201] = {
 
 uint32_t benchmark::itoa(uint64_t v, char * const dst) {
   __builtin_prefetch(&digit_pairs[0]);
-  __builtin_prefetch(&digit_pairs[128]);
   auto const size = digits10(v);
   char * c = &dst[size-1];
 
