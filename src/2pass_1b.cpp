@@ -1,7 +1,7 @@
 #include <cstdint>
 #include "benchmark.hpp"
 
-const char *benchmark::name = "2pass_1b";
+const char *benchmark::Name = "2pass_1b";
 
 
 uint32_t benchmark::itoa(uint64_t v, char *const dst) {

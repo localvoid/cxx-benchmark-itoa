@@ -9,6 +9,9 @@
 
 namespace {
 
+using namespace benchmark;
+
+
 const uint64_t Numbers[20] = {
   0,
   10,
@@ -33,43 +36,18 @@ const uint64_t Numbers[20] = {
 };
 
 
-#if defined(__i386__)
-uint64_t rdtsc() {
-  uint64_t x;
-  __asm__ volatile (".byte 0x0f, 0x31" : "=A" (x));
-  return x;
-}
-#elif defined(__x86_64__)
-uint64_t rdtsc() {
-  uint32_t hi, lo;
-  __asm__ __volatile__ ("rdtsc" : "=a"(lo), "=d"(hi));
-  return ((uint64_t)lo)|(((uint64_t)hi)<<32 );
-}
-#endif
-
-template<typename T>
-uint64_t measure(T code) {
-  uint64_t a = rdtsc();
-
-  code();
-
-  uint64_t b = rdtsc();
-
-  return (b - a);
-}
-
 void run(int loop_count) {
   int digits = 1;
   char buf[32];
 
   for (auto i: Numbers) {
-    uint64_t time = measure([i, loop_count, &buf]() {
+    uint64_t time = measure_cycles([i, loop_count, &buf]() {
         for (int x = 0; x < loop_count; ++x) {
-          benchmark::itoa(i, buf);
+          itoa(i, buf);
         }
       });
 
-    std::cout << benchmark::name << ',' << digits << ',' << time/loop_count << std::endl;
+    std::cout << Name << ',' << digits << ',' << time/loop_count << std::endl;
     digits++;
   }
 }
@@ -78,13 +56,13 @@ void run(int loop_count, int digits) {
   char buf[32];
 
   auto i = Numbers[digits-1];
-  uint64_t time = measure([i, loop_count, &buf]() {
+  uint64_t time = measure_cycles([i, loop_count, &buf]() {
       for (int x = 0; x < loop_count; ++x) {
-        benchmark::itoa(i, buf);
+        itoa(i, buf);
       }
     });
 
-  std::cout << benchmark::name << ',' << digits << ',' << time/loop_count << std::endl;
+  std::cout << Name << ',' << digits << ',' << time/loop_count << std::endl;
 }
 
 }

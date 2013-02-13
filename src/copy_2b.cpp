@@ -2,7 +2,7 @@
 #include <string.h>
 #include "benchmark.hpp"
 
-const char *benchmark::name = "copy_2b";
+const char *benchmark::Name = "copy_2b";
 
 
 const char digit_pairs[201] = {

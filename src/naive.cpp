@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "benchmark.hpp"
 
-const char *benchmark::name = "naive";
+const char *benchmark::Name = "naive";
 
 uint32_t benchmark::itoa(uint64_t v, char *dst) {
   char *start = dst;
