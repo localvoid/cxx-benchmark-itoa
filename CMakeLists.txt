@@ -10,7 +10,7 @@ option(BUILD_TESTS "Build test applications" ON)
 set(CXX_WARNING_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS "-fvisibility=hidden -fno-rtti -pipe -std=gnu++11 ${CXX_WARNING_FLAGS}")
 set(CMAKE_CXX_FLAGS_DEBUG    "-O0 -g3")
-set(CMAKE_CXX_FLAGS_RELEASE  "-mtune=native -march=native -O3 -g -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE  "-mtune=native -march=native -O2 -g -DNDEBUG")
 
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,--as-needed -Wl,--hash-style=gnu")
 
