@@ -7,7 +7,7 @@ out <- commandArgs(trailingOnly = TRUE)[1]
 
 raw_data <- read.csv("stdin")
 d <- ddply(raw_data, .(Name, Digits), summarize,
-           Time = median(Time))
+           Time = min(Time))
 
 png(filename=paste0(out, ".png"), width=800, height=600)
 

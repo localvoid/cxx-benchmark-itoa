@@ -66,7 +66,7 @@ In the hot mode, it runs benchmark application for 100 times with
 arguments (inner loop counter=100).
 
 And then generates graphical representation of the collected data. As
-a time value it uses median of all time values for each (benchmark,
+a time value it uses minimum of all time values for each (benchmark,
 digits).
 
 Benchmarking results
