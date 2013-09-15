@@ -22,12 +22,10 @@ Running Benchmarks
 To run benchmarking script you need to install `R language
 <http://www.r-project.org/>`_ and `ggplot2 <http://ggplot2.org/>`_.
 
-Make sure that you set cpu governor mode to performance, so the
-results of the benchmark would be more accurate.
-
-::
-
-    # cpupower frequency-set -g performance
+Make sure that you `set cpu frequency
+<https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling>`_ to
+fixed value and disable any turbo mode, so the results of the
+benchmark should be more accurate.
 
 And then you can run the benchmark. It will generate .png files in the
 current directory.
