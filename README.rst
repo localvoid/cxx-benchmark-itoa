@@ -72,16 +72,16 @@ digits).
 Benchmarking results
 ====================
 
-Linux, gcc 4.7.2 (core i5-3570k)
-++++++++++++++++++++++++++++++++
+Linux 3.10.11, gcc 4.8.1 (core i5-3570k, intel_pstate)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Cold
 ----
 
-.. image:: https://raw.github.com/localvoid/cxx-benchmark-itoa/master/results/linux/gcc_4_7/i5_3570k/cold.png
+.. image:: https://raw.github.com/localvoid/cxx-benchmark-itoa/master/results/linux/gcc_4_8/i5_3570k/cold.png
 
 Hot
 ---
 
-.. image:: https://raw.github.com/localvoid/cxx-benchmark-itoa/master/results/linux/gcc_4_7/i5_3570k/hot.png
+.. image:: https://raw.github.com/localvoid/cxx-benchmark-itoa/master/results/linux/gcc_4_8/i5_3570k/hot.png
 
